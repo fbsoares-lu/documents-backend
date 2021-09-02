@@ -2,6 +2,7 @@ import { Router } from 'express';
 import { accessRoutes } from './accessRoutes';
 
 import { athenticateRoutes } from './authenticateRoutes';
+import { projectRoutes } from './projectRoutes';
 import { usersRoutes } from './usersRoutes';
 
 const routes = Router();
@@ -9,5 +10,6 @@ const routes = Router();
 routes.use('/users', usersRoutes);
 routes.use('/login', athenticateRoutes);
 routes.use('/access', accessRoutes);
+routes.use('/products', projectRoutes);
 
 export { routes };
