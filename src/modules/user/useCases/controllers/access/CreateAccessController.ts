@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { CreateAccessService } from "../services/CreateAccessService";
+import { CreateAccessService } from "../../services/access/CreateAccessService";
 
 class CreateAccessController {
     async handle(request: Request, response: Response) {

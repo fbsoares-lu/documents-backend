@@ -1,6 +1,6 @@
 import { getCustomRepository } from 'typeorm';
-import { Access } from '../entities/Access';
-import { AccessRepository } from '../repositories/AccessRepository';
+import { Access } from '../../../entities/Access';
+import { AccessRepository } from '../../../repositories/AccessRepository';
 
 class CreateAccessService {
     async execute(description: string): Promise<Access> {
