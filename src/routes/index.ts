@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { accessRoutes } from './accessRoutes';
 
 import { athenticateRoutes } from './authenticateRoutes';
-import { projectRoutes } from './projectRoutes';
+import { projectRoutes } from './projectsRoutes';
 import { usersRoutes } from './usersRoutes';
 
 const routes = Router();

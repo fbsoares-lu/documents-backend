@@ -19,11 +19,11 @@ class CreateProjectService {
             throw new Error("User does not exists!");
         };
 
-        const projectWithSameName = await projectsRepository.findOne({ name });
+        // const projectWithSameName = await projectsRepository.findOne({ name });
 
-        if (projectWithSameName) {
-            throw new Error("Could not create a project with the same name!");
-        }
+        // if (projectWithSameName) {
+        //     throw new Error("Could not create a project with the same name!");
+        // }
 
         const project = projectsRepository.create({
             name,
