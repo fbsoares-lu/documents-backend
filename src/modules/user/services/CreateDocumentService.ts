@@ -1,5 +1,5 @@
 import { getCustomRepository } from "typeorm"
-import { DocumentsRepository } from "../../../repositories/DocumentsRepository";
+import { DocumentsRepository } from "../repositories/DocumentsRepository";
 // import { ProjectsRepository } from "../../../repositories/ProjectsRepository";
 
 interface IDocumentRequest {

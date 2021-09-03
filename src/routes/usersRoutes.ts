@@ -1,7 +1,7 @@
 import { Router } from 'express';
 
-import { CreateUserController } from '../modules/user/useCases/controllers/user/CreateUserController';
-import { ListUserController } from '../modules/user/useCases/controllers/user/ListUserController';
+import { CreateUserController } from '../modules/user/controllers/CreateUserController';
+import { ListUserController } from '../modules/user/controllers/ListUserController';
 
 const usersRoutes = Router();
 

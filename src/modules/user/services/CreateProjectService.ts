@@ -1,6 +1,6 @@
 import { getCustomRepository } from "typeorm";
-import { ProjectsRepository } from '../../../repositories/ProjectsRepository';
-import { UsersRepository } from '../../../repositories/UsersRepostory';
+import { ProjectsRepository } from '../repositories/ProjectsRepository';
+import { UsersRepository } from '../repositories/UsersRepostory';
 
 interface IProjectRequest {
     name: string;

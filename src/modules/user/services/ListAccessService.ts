@@ -1,5 +1,5 @@
 import { getCustomRepository } from "typeorm";
-import { AccessRepository } from "../../../repositories/AccessRepository";
+import { AccessRepository } from "../repositories/AccessRepository";
 
 class ListAccessService {
     async execute() {

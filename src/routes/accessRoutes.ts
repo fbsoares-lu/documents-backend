@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { CreateAccessController } from '../modules/user/useCases/controllers/access/CreateAccessController'
-import { ListAccessController } from '../modules/user/useCases/controllers/access/ListAccessController';
+import { CreateAccessController } from '../modules/user/controllers/CreateAccessController'
+import { ListAccessController } from '../modules/user/controllers/ListAccessController';
 
 const accessRoutes = Router();
 

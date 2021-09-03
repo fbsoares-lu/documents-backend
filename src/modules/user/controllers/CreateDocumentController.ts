@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { CreateDocumentService } from "../../services/document/CreateDocumentService";
+import { CreateDocumentService } from "../services/CreateDocumentService";
 
 class CreateDocumentController {
     async handle(request: Request, response: Response) {

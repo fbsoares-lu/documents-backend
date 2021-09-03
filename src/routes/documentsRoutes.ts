@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import { CreateDocumentController } from '../modules/user/useCases/controllers/document/CreateDocumentController';
+import { CreateDocumentController } from '../modules/user/controllers/CreateDocumentController';
 
 const documentsRoutes = Router();
 
