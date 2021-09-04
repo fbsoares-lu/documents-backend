@@ -1,10 +1,10 @@
 import { Router } from 'express';
 import { ensureAuthenticated } from '../middlewares/ensureAuthenticated';
 import { ensureUserChangesProject } from '../middlewares/ensureUserChangesProject';
-import { AlterProjectController } from '../modules/user/controllers/AlterProjectController';
-import { CreateProjectController } from '../modules/user/controllers/CreateProjectController';
-import { DeleteProjectController } from '../modules/user/controllers/DeleteProjectController';
-import { ListProjectController } from '../modules/user/controllers/ListProjectController';
+import { AlterProjectController } from '../modules/user/useCases/projectUseCase/controllers/AlterProjectController';
+import { CreateProjectController } from '../modules/user/useCases/projectUseCase/controllers/CreateProjectController';
+import { DeleteProjectController } from '../modules/user/useCases/projectUseCase/controllers/DeleteProjectController';
+import { ListProjectController } from '../modules/user/useCases/projectUseCase/controllers/ListProjectController';
 
 const projectRoutes = Router();
 

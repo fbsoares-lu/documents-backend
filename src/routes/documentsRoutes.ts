@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { ensureAuthenticated } from '../middlewares/ensureAuthenticated';
 
-import { CreateDocumentController } from '../modules/user/controllers/CreateDocumentController';
+import { CreateDocumentController } from '../modules/user/useCases/documentUseCase/controllers/CreateDocumentController';
 
 const documentsRoutes = Router();
 
