@@ -1,4 +1,5 @@
 import { Router } from 'express';
+
 import { ensureAuthenticated } from '../middlewares/ensureAuthenticated';
 import { ensureUserChangesProject } from '../middlewares/ensureUserChangesProject';
 import { AlterProjectController } from '../modules/user/useCases/projectUseCase/controllers/AlterProjectController';

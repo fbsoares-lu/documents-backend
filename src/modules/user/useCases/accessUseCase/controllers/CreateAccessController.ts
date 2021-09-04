@@ -10,7 +10,8 @@ class CreateAccessController {
         const userAccess = await createUserAccessService.execute({
             id_project,
             id_user,
-            permission
+            permission,
+            request: request.user_id
         });
 
         return response.status(201).json(userAccess);
