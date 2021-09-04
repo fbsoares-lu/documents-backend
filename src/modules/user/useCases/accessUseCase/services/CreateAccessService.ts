@@ -16,7 +16,7 @@ class CreateAccessService {
         const userAuthenticatedId = request;
 
         if (userAuthenticatedId === id_user) {
-            throw new Error("Can not crate user with same id!");
+            permission = true;
         }
 
         const userIdExists = await accessRepository.findOne({ id_user });
