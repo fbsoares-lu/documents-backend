@@ -19,10 +19,6 @@ export class CreateProjects1630598761669 implements MigrationInterface {
                     {
                         name: "user_access",
                         type: "uuid"
-                    },
-                    {
-                        name: "id_access",
-                        type: "uuid"
                     }
                 ],
                 foreignKeys: [
@@ -31,14 +27,6 @@ export class CreateProjects1630598761669 implements MigrationInterface {
                         referencedTableName: "users",
                         referencedColumnNames: ["id"],
                         columnNames: ["user_access"],
-                        onDelete: "SET NULL",
-                        onUpdate: "SET NULL"
-                    },
-                    {
-                        name: "FKAccessProjects",
-                        referencedTableName: "access",
-                        referencedColumnNames: ["id"],
-                        columnNames: ["id_access"],
                         onDelete: "SET NULL",
                         onUpdate: "SET NULL"
                     }

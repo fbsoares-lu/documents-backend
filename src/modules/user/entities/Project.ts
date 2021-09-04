@@ -19,13 +19,6 @@ class Project {
     @ManyToOne(() => User)
     user: User;
 
-    @Column()
-    id_access: string;
-
-    @JoinColumn({ name: "id_access" })
-    @ManyToOne(() => Access)
-    access: Access;
-
     constructor() {
         if (!this.id) {
             this.id = uuid();
