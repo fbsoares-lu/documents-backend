@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { accessRoutes } from './accessRoutes';
 
+import { accessRoutes } from './accessRoutes';
 import { athenticateRoutes } from './authenticateRoutes';
 import { documentsRoutes } from './documentsRoutes';
 import { projectRoutes } from './projectsRoutes';

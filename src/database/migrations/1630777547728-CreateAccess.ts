@@ -1,11 +1,11 @@
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
-export class CreateUserAccess1630726421415 implements MigrationInterface {
+export class CreateAccess1630777547728 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
-                name: "usersAccess",
+                name: "access",
                 columns: [
                     {
                         name: "id",
@@ -21,13 +21,13 @@ export class CreateUserAccess1630726421415 implements MigrationInterface {
                         type: "uuid"
                     },
                     {
-                        name: "id_access",
-                        type: "uuid"
+                        name: "permission",
+                        type: "boolean"
                     }
                 ],
                 foreignKeys: [
                     {
-                        name: "FKUserAccessProject",
+                        name: "FKProjectAccess",
                         referencedTableName: "projects",
                         referencedColumnNames: ["id"],
                         columnNames: ["id_project"],
@@ -35,18 +35,10 @@ export class CreateUserAccess1630726421415 implements MigrationInterface {
                         onUpdate: "SET NULL"
                     },
                     {
-                        name: "FKUserA",
+                        name: "FKUserAccess",
                         referencedTableName: "users",
                         referencedColumnNames: ["id"],
                         columnNames: ["id_user"],
-                        onDelete: "SET NULL",
-                        onUpdate: "SET NULL"
-                    },
-                    {
-                        name: "FKAccess",
-                        referencedTableName: "access",
-                        referencedColumnNames: ["id"],
-                        columnNames: ["id_access"],
                         onDelete: "SET NULL",
                         onUpdate: "SET NULL"
                     }
@@ -56,7 +48,7 @@ export class CreateUserAccess1630726421415 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable("usersAccess");
+        await queryRunner.dropTable("access");
     }
 
 }

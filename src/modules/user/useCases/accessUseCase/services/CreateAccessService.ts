@@ -1,23 +1,26 @@
-import { getCustomRepository } from 'typeorm';
-import { Access } from '../../../entities/Access';
-import { AccessRepository } from '../../../repositories/AccessRepository';
+import { getCustomRepository } from "typeorm";
+import { AccessRepository } from "../../../repositories/AccessRepository";
+
+interface IUserAccessRequest {
+    id_project: string;
+    id_user: string;
+    permission: boolean;
+}
 
 class CreateAccessService {
-    async execute(description: string): Promise<Access> {
+    async execute({ id_project, id_user, permission }: IUserAccessRequest) {
         const accessRepository = getCustomRepository(AccessRepository);
 
-        const accessWithSameDescription = await accessRepository.findOne({ description });
+        const userAccess = accessRepository.create({
+            id_project,
+            id_user,
+            permission
+        });
 
-        if (accessWithSameDescription) {
-            throw new Error("Description alredy use!");
-        }
+        await accessRepository.save(userAccess);
 
-        const access =  accessRepository.create({description});
-
-        await accessRepository.save(access);
-
-        return access;
+        return userAccess;
     }
-};
+}
 
 export { CreateAccessService };

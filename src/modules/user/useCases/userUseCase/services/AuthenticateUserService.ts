@@ -29,7 +29,7 @@ class AuthenticateUserService {
             email: user.email
         }, "e0c702acb3d1a67dbdd366120ba4c291", {
             subject: user.id,
-            expiresIn: '5d'
+            expiresIn: '1d'
         });
         
         return token;

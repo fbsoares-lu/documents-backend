@@ -3,14 +3,18 @@ import { CreateAccessService } from "../services/CreateAccessService";
 
 class CreateAccessController {
     async handle(request: Request, response: Response) {
-        const { description } = request.body;
+        const { id_project, id_user, permission } = request.body;
 
-        const createAccessService = new CreateAccessService();
+        const createUserAccessService = new CreateAccessService();
 
-        const access = await createAccessService.execute(description);
+        const userAccess = await createUserAccessService.execute({
+            id_project,
+            id_user,
+            permission
+        });
 
-        return response.json(access);
+        return response.status(201).json(userAccess);
     }
-};
+}
 
 export { CreateAccessController };

@@ -1,14 +1,10 @@
 import { Router } from 'express';
-import { CreateAccessController } from '../modules/user/useCases/accessUseCase/controllers/CreateAccessController'
-import { ListAccessController } from '../modules/user/useCases/accessUseCase/controllers/ListAccessController';
+import { CreateAccessController } from '../modules/user/useCases/accessUseCase/controllers/CreateAccessController';
 
 const accessRoutes = Router();
 
 const createAccessController = new CreateAccessController();
-const listAccessController = new ListAccessController();
 
 accessRoutes.post("/", createAccessController.handle);
 
-accessRoutes.get("/", listAccessController.handle);
-
-export { accessRoutes };
+export { accessRoutes }
