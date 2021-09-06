@@ -9,9 +9,12 @@ interface IProjectRequest {
 class AlterProjectService {
     async execute({ name, project_id}: IProjectRequest) {
         const projectRepository = getCustomRepository(ProjectsRepository);
-        console.log("veio: "+ project_id);
-        const project = await projectRepository.findOneOrFail(project_id);
-        console.log("id: "+project.id);
+
+        const project = await projectRepository.findOne(project_id);
+        
+        if (!project) {
+            throw new Error("ID Project does not exists!");
+        }
 
         project.name = name;
 

@@ -1,7 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import { getCustomRepository } from "typeorm";
 import { AccessRepository } from "../modules/user/repositories/AccessRepository";
-import { ProjectsRepository } from "../modules/user/repositories/ProjectsRepository";
 
 export async function ensureUserPermissionToDocument(
     request: Request,
@@ -9,22 +8,16 @@ export async function ensureUserPermissionToDocument(
     next: NextFunction
 ) {
     const { user_id } = request;
-    const { id_project } = request.body;
-    console.log(user_id);
 
     const accessRepository = getCustomRepository(AccessRepository);
-    const projectRepository = getCustomRepository(ProjectsRepository);
 
-    const userAcess = await accessRepository.findOne({id_project});
-    
-    if (!userAcess) {
-        throw new Error("Access does not exists!");
+    const userHasPermission = await accessRepository.findOne({ id_user: user_id});
+
+    if (!userHasPermission) {
+        throw new Error("User does not be in the project");
     }
 
-    const userIdProject = await projectRepository.findOneOrFail(id_project);
-
-    if (userAcess.permission === false || (userIdProject.user_access = user_id)) {
-        console.log(userAcess.permission);
+    if (userHasPermission?.permission === false) {
         throw new Error("User does not permission!");
     }
 
