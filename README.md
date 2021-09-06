@@ -83,3 +83,7 @@ Inicialmente é necessário ter o Postman para rodar o link abaixo com as requis
   ````
 - DELETE - Remover documento por usuários que tem permissão, passando o id.
 - PUT - Alterar documento por usuários que tem permissão, passando o id.
+
+### Esquema do projeto
+
+<img src="./assets/schema.PNG"/>
