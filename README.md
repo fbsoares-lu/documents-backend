@@ -22,7 +22,7 @@ Para rodar o projeto é necessário utilizar o seguinte comando:
 
 ## :scroll: Fazer as requisições
 Inicialmente é necessário ter o Postman para rodar o link abaixo com as requisições prontas para cada funcionalidade.
-<br/>Link: https://www.getpostman.com/collections/d5acd4a95ec2dbbb22ba 
+<br/>Link: https://documenter.getpostman.com/view/17377506/U16gRT8d 
 
 ### Como rodar para cada opção
 
